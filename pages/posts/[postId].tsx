@@ -13,7 +13,7 @@ const PostView = () => {
   const router = useRouter();
   const { postId } = router.query;
 
-  const { data: fetchedPost, isLoading } = usePost(postId as string);
+  const { data: fetchedPost, isLoading, error,mutate } = usePost(postId as string);
 
   if (isLoading || !fetchedPost) {
     return (
@@ -22,6 +22,7 @@ const PostView = () => {
       </div>
     )
   }
+
 
   return ( 
     <>

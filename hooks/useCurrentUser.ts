@@ -3,7 +3,7 @@ import useSWR from 'swr';
 import fetcher from '@/libs/fetcher';
 
 const useCurrentUser = () => {
-  const { data, error, isLoading, mutate } = useSWR('/api/current', fetcher);
+  const { data, error, isLoading, mutate } = useSWR('/api/current', fetcher, { refreshInterval: 1000 });
 
   return {
     data,
@@ -14,3 +14,6 @@ const useCurrentUser = () => {
 };
 
 export default useCurrentUser;
+
+
+

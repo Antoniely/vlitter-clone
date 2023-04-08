@@ -40,8 +40,11 @@ export default NextAuth({
 
         return user;
       }
-    })
+    }),
   ],
+  pages : {
+    error: '/error',
+  },
   debug: process.env.NODE_ENV === 'development',
   session: {
     strategy: 'jwt',
